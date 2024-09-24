@@ -86,8 +86,11 @@
         <!-- Genocide -->
         <fieldset>
           <legend>Genocide</legend>
-          <label
-            >LETHALVIOLENCE: Has the ethnic group been subjected to lethal
+                  <p class="p-note">
+                    <u>Genocide:</u> Deliberate killing of a large group of people based on nationality or ethnicity.
+                  </p>
+                  <label
+                  >LETHALVIOLENCE: Has the ethnic group been subjected to lethal
             violence?</label
           >
           <div class="description-box">
@@ -142,8 +145,11 @@
         <!-- Ethnocide -->
         <fieldset>
           <legend>Ethnocide</legend>
-          <label
-            >ETHNOCIDE: Has the ethnic group been subjected to ethnocide (see
+                  <p class="p-note">
+                    <u>Ethnocide:</u> deliberate and systematic destruction of the culture of an ethnic group (including their language, religion, or way of life)
+                  </p>
+                  <label
+                  >ETHNOCIDE: Has the ethnic group been subjected to ethnocide (see
             definition below) within the boundaries of the current
             county?</label
           >
@@ -257,7 +263,7 @@
 
           <br />
 
-          <label for="slaverytimeframe">SLAVERYTIMEFRAME: If so, when?</label>
+          <label for="slaverytimeframe">SLAVERYTIMEFRAME: If so, when did this occur?</label>
           <div class="small-space"></div>
           <input
             type="text"
@@ -304,7 +310,7 @@
           ></textarea
           ><br />
 
-          <label for="slavetrader">SLAVETRADER: </label>
+          <label for="slavetrader">SLAVETRADER: Were members of this ethnic group as a whole (or cultural ancestors of this ethnic group) described as engaged in the capture and sale of slaves from other ethnic groups?</label>
           <div class="small-space"></div>
           <select id="slavetrader" name="slavetrader">
             <option value="Y">Yes</option>
@@ -314,6 +320,7 @@
           <br />
 
           <label for="slavetrader_comment">Comment:</label>
+          <div class="description-box">If they enslaved members of a specific other ethnic group, please record this in the comment for this section (and also the time period that this occurred during).</div>
           <div class="small-space"></div>
           <textarea
             id="slavetrader_comment"
@@ -323,7 +330,10 @@
           ></textarea
           ><br />
 
-          <label for="slavecaste">SLAVECASTE:</label>
+          <label for="slavecaste">SLAVECASTE: Did this ethnic group include a caste system in which one of some members of the ethnic group belong to a “slave caste” and are owned by other members of the same ethnic group?</label>
+          <div class="description-box">This can include so-called feudal systems where some members of an
+            ethnicity were subjected to long-term forced labor without compensation by other
+            members of the ethnicity.</div>
           <div class="small-space"></div>
           <select id="slavecaste" name="slavecaste">
             <option value="Y">Yes</option>
@@ -410,10 +420,9 @@
           ><br />
 
           <label
-            >PUBLICHUMILIATION: Has the ethnic group faced public
-            humiliation?</label
+            >PUBLICHUMILIATION: Are members of the ethnic group subjected to public humiliation?</label
           >
-          <div class="description-box"></div>
+          <div class="description-box">This can involve less respect than higher status ethnic groups in how they are addressed (e.g., by their first name rather than by an honorific), derogatory names publicly used for the ethnic group, requirement that members of the ethnic group cannot wear high status clothing or use high status names.</div>
           <div class="small-space"></div>
           <select id="publichumiliation" name="publichumiliation">
             <option value="Y">Yes</option>
@@ -1288,7 +1297,7 @@
             cols="50"
             style="display:none;"
           ></textarea>
-          
+
           <!-- Textarea for General Comments -->
           <label for="general_comments">General Comments:</label>
           <textarea
@@ -1349,4 +1358,3 @@
     </script>
   </body>
 </html>
-
