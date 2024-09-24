@@ -1,0 +1,1360 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Documenting Global Ethnic Disparities: Codebook Entry Generator</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Documenting Global Ethnic Disparities: Codebook Entry Generator</h1>
+      <form id="dataForm">
+        <!-- admin -->
+        <!-- <fieldset style="display: none">
+             <legend>Basic</legend>
+             <label for="team">Team:</label>
+             <input type="text" id="team" name="team" />
+
+             <label for="country">Country:</label>
+             <input type="text" id="country" name="country" />
+
+             <label for="ethnic_group">Ethnic Group:</label>
+             <input type="text" id="ethnic_group" name="ethnic_group" />
+
+             <label for="percent_population">Percent of Population:</label>
+             <input
+             type="text"
+             id="percent_population"
+             name="percent_population"
+             />
+
+             <label for="cmid">CMID:</label>
+             <input type="text" id="cmid" name="cmid" />
+             </fieldset> -->
+
+        <!-- Forced Displacement -->
+        <fieldset>
+          <legend>Forced Displacement</legend>
+          <label
+            >FORCEDAWAY: Did substantial numbers of the ethnic group move either
+            within or away from the country to avoid ethnic-based persecution or
+            discrimination in the recorded past?
+          </label>
+          <div class="description-box">
+            This can include forced evictions, religious persecution, or ethnic
+            cleansing, as well as concerted attempts to make the ethnic group
+            move even if this is not due directly to the ethnic identity of the
+            group.
+            <br />
+            <b>Exclusions: </b>Do not code if the only reason for moving is
+            because the group is nomadic or because the group is moving for
+            economic reasons unrelated to their ethnic membership.
+          </div>
+          <div class="small-space"></div>
+          <select id="forcedaway" name="forcedaway">
+            <option value="Y">Yes</option>
+            <option value="N" selected>No</option>
+            <!-- <option value="?">?</option> -->
+          </select>
+          <label for="forcedawaytime"
+            >FORCEDAWAYTIME: If so, when did this occur?</label
+          >
+          <div class="small-space"></div>
+          <input
+            type="text"
+            id="forcedawaytime"
+            name="forcedawaytime"
+            placeholder="e.g., 1900-1920"
+          /><br />
+
+          <label for="forcedaway_comment">Comment:</label>
+          <div class="small-space"></div>
+          <textarea
+            id="forcedaway_comment"
+            name="forcedaway_comment"
+            rows="2"
+            cols="50"
+          ></textarea
+          ><br />
+        </fieldset>
+
+        <!-- Genocide -->
+        <fieldset>
+          <legend>Genocide</legend>
+          <label
+            >LETHALVIOLENCE: Has the ethnic group been subjected to lethal
+            violence?</label
+          >
+          <div class="description-box">
+            This can include:
+            <ol>
+              <li>
+                State-sponsored killings that are ostensibly for political
+                reasons but that differentially affect some ethnic groups over
+                others.
+              </li>
+              <li>
+                Political violence where deaths are concentrated within an
+                ethnic group.
+              </li>
+              <li>
+                Mass killings that uniquely affect a large number of members of
+                a specific ethnic group.
+              </li>
+              <li>
+                “Tribal conflict” where one ethnic group is subjected to lethal
+                violence from another.
+              </li>
+              <li>
+                Targeted killings based on land disputes and in response to
+                rebellions.
+              </li>
+            </ol>
+          </div>
+          <div class="small-space"></div>
+          <select id="lethalviolence" name="lethalviolence">
+            <option value="Y">Yes</option>
+            <option value="N" selected>No</option>
+            <!-- <option value="?">?</option> -->
+          </select>
+          <br />
+
+          <label for="lethalviolence_comment">Comment:</label>
+          <div class="description-box">
+            Please record in the comments, the approximate number of individuals
+            killed.
+          </div>
+          <div class="small-space"></div>
+          <textarea
+            id="lethalviolence_comment"
+            name="lethalviolence_comment"
+            rows="2"
+            cols="50"
+          ></textarea
+          ><br />
+        </fieldset>
+
+        <!-- Ethnocide -->
+        <fieldset>
+          <legend>Ethnocide</legend>
+          <label
+            >ETHNOCIDE: Has the ethnic group been subjected to ethnocide (see
+            definition below) within the boundaries of the current
+            county?</label
+          >
+          <div class="description-box">
+            This can include:
+            <ol>
+              <li>
+                Punishing members of an ethnic group for engaging in cultural,
+                religious, or linguistic practices characteristic of the ethnic
+                group from any kind of party (e.g., not just the government).
+              </li>
+              <li>
+                State policies that restrict teaching of an ethnic group’s
+                language, religion, or cultural practices.
+              </li>
+              <li>
+                An ethnic group having their traditional means of livelihood
+                taken away due to land grabs or destruction of their
+                environment.
+              </li>
+              <li>
+                Government efforts to change cultural practices even if these
+                are objectionable to the coder.
+              </li>
+              <li>
+                Governments’ failure to recognize the existence of an ethnic
+                group.
+              </li>
+              <li>
+                Documented microaggressions aimed at an ethnic group’s cultural,
+                religious, or linguistic practices.
+              </li>
+            </ol>
+            This can include state policies that restrict the practice of
+            cultural, religious, and linguistic practices of all non-majority
+            groups.
+            <br />
+            <strong>EXCLUSIONS: </strong>Simply being forced from land,
+            experiencing repression, or being deprived of education and
+            healthcare without clear evidence that it systematically destroyed
+            the culture, way of life, religion or language of the group should
+            not be counted here. Language loss that is not a result of a
+            concerted effort should be excluded. Exclude simply mention of laws
+            restricting immigration of members of this group.
+          </div>
+          <div class="small-space"></div>
+          <select id="ethnocide" name="ethnocide">
+            <option value="Y">Yes</option>
+            <option value="N" selected>No</option>
+            <!-- <option value="?">?</option> -->
+          </select>
+          <br />
+
+          <label for="ethnocide_comment">Comment:</label>
+          <div class="small-space"></div>
+          <textarea
+            id="ethnocide_comment"
+            name="ethnocide_comment"
+            rows="2"
+            cols="50"
+          ></textarea
+          ><br />
+        </fieldset>
+
+        <!-- Forced Labor -->
+        <fieldset>
+          <legend>Forced Labor and Slavery</legend>
+          <label
+            >FORCEDLABOR: Were members of this ethnic group systematically
+            subjected to forced labor within the region of this country by
+            members of OTHER ethnic groups in the last 500 years?</label
+          >
+          <div class="description-box">
+            Forced labor means that people have no choice as to whether they do
+            work for or offer services to another. This can be due to threat of
+            physical violence or laws or informal institutions tying people to
+            an owner, a relationship or a tract of land. This can include:
+            <ol>
+              <li>
+                Forced labor due to outsiders colonizing the specific country.
+              </li>
+              <li>
+                Members of the ethnic group targeted for capture to be sold as
+                slaves in other countries.
+              </li>
+            </ol>
+            This can also include situations where members of the ethnic group
+            would be punished, persecuted, or left with no outside option if
+            they didn’t pursue the work that society demands of them.
+            <ul>
+              <li>
+                If it is not clear whether this happened within the borders of
+                the country, then code as Y and make a comment.
+              </li>
+              <li>
+                If members of this ethnic group were systematically enslaved by
+                members of a specific other ethnic group, please record the
+                other ethnic group in the comment section.
+              </li>
+            </ul>
+            <strong>EXCLUSIONS: </strong>This should not include cases where
+            members of the ethnic group were enslaved by others within the same
+            ethnic group (see SLAVECASTE for this).
+          </div>
+          <div class="small-space"></div>
+          <select id="forcedlabor" name="forcedlabor">
+            <option value="Y">Yes</option>
+            <option value="N" selected>No</option>
+            <!-- <option value="?">?</option> -->
+          </select>
+
+          <br />
+
+          <label for="slaverytimeframe">SLAVERYTIMEFRAME: If so, when?</label>
+          <div class="small-space"></div>
+          <input
+            type="text"
+            id="slaverytimeframe"
+            name="slaverytimeframe"
+            placeholder="e.g., 1800-1900"
+          /><br />
+
+          <label for="forcedlabor_comment">Comment:</label>
+          <div class="small-space"></div>
+          <textarea
+            id="forcedlabor_comment"
+            name="forcedlabor_comment"
+            rows="2"
+            cols="50"
+          ></textarea
+          ><br />
+
+          <label for="enslaver"
+            >ENSLAVER: Did members of this ethnic group (or cultural ancestors
+            of this ethnic group) systematically enslave others within this
+            country?</label
+          >
+
+          <div class="small-space"></div>
+          <select id="enslaver" name="enslaver">
+            <option value="Y">Yes</option>
+            <option value="N" selected>No</option>
+            <!-- <option value="?">?</option> -->
+          </select>
+          <br />
+
+          <label for="enslaver_comment">Comment:</label>
+          <div class="description-box">
+            If they enslaved members of a specific other ethnic group, please
+            record this in the comment for this section.
+          </div>
+          <div class="small-space"></div>
+          <textarea
+            id="enslaver_comment"
+            name="enslaver_comment"
+            rows="2"
+            cols="50"
+          ></textarea
+          ><br />
+
+          <label for="slavetrader">SLAVETRADER: </label>
+          <div class="small-space"></div>
+          <select id="slavetrader" name="slavetrader">
+            <option value="Y">Yes</option>
+            <option value="N" selected>No</option>
+            <!-- <option value="?">?</option> -->
+          </select>
+          <br />
+
+          <label for="slavetrader_comment">Comment:</label>
+          <div class="small-space"></div>
+          <textarea
+            id="slavetrader_comment"
+            name="slavetrader_comment"
+            rows="2"
+            cols="50"
+          ></textarea
+          ><br />
+
+          <label for="slavecaste">SLAVECASTE:</label>
+          <div class="small-space"></div>
+          <select id="slavecaste" name="slavecaste">
+            <option value="Y">Yes</option>
+            <option value="N" selected>No</option>
+            <!-- <option value="?">?</option> -->
+          </select>
+          <br />
+
+          <label for="slavecaste_comment">Comment:</label>
+          <div class="small-space"></div>
+          <textarea
+            id="slavecaste_comment"
+            name="slavecaste_comment"
+            rows="2"
+            cols="50"
+          ></textarea
+          ><br />
+        </fieldset>
+
+        <!-- Other Discrimination -->
+        <fieldset>
+          <legend>Other Discrimination</legend>
+          <label
+            >SEXUALASSAULT: Has the ethnic group been targeted for sexual
+            assault—coercion into non- consensual sexual behavior—by another
+            ethnic group?</label
+          >
+          <div class="description-box">
+            This can include:
+            <ol>
+              <li>sex trafficking,</li>
+              <li>forced sex work,</li>
+              <li>sexual slavery,</li>
+              <li>rape.</li>
+            </ol>
+            This can also include sexual harassment.
+          </div>
+          <div class="small-space"></div>
+          <select id="sexualassault" name="sexualassault">
+            <option value="Y">Yes</option>
+            <option value="N" selected>No</option>
+            <!-- <option value="?">?</option> -->
+          </select>
+          <br />
+
+          <label for="sexualassault_comment">Comment:</label>
+          <div class="small-space"></div>
+          <textarea
+            id="sexualassault_comment"
+            name="sexualassault_comment"
+            rows="2"
+            cols="50"
+          ></textarea
+          ><br />
+
+          <label
+            >EXCLUSION: Has the ethnic group been systematically excluded from
+            public spaces and social opportunities?</label
+          >
+          <div class="description-box">
+            This can include exclusion from public spaces (e.g., parks, places
+            of worship, major thoroughfares, water sources, beaches, pools,
+            bathrooms, public transportation), exclusion from opportunities for
+            advancement (e.g., school attendance or specific occupations), or
+            exclusion for a voice in politics (e.g., restrictions on voting or
+            the ability to hold office).
+          </div>
+          <div class="small-space"></div>
+          <select id="exclusion" name="exclusion">
+            <option value="Y">Yes</option>
+            <option value="N" selected>No</option>
+            <!-- <option value="?">?</option> -->
+          </select>
+          <br />
+
+          <label for="exclusion_comment">Comment:</label>
+          <div class="small-space"></div>
+          <textarea
+            id="exclusion_comment"
+            name="exclusion_comment"
+            rows="2"
+            cols="50"
+          ></textarea
+          ><br />
+
+          <label
+            >PUBLICHUMILIATION: Has the ethnic group faced public
+            humiliation?</label
+          >
+          <div class="description-box"></div>
+          <div class="small-space"></div>
+          <select id="publichumiliation" name="publichumiliation">
+            <option value="Y">Yes</option>
+            <option value="N" selected>No</option>
+            <!-- <option value="?">?</option> -->
+          </select>
+          <br />
+
+          <label for="publichumiliation_comment">Comment:</label>
+          <div class="small-space"></div>
+          <textarea
+            id="publichumiliation_comment"
+            name="publichumiliation_comment"
+            rows="2"
+            cols="50"
+          ></textarea
+          ><br />
+
+          <label
+            >DISCRIMINATION: Have members of the ethnic group consistently been
+            discriminated against because of their ethnicity in the boundaries
+            of this country?</label
+          >
+          <div class="description-box">
+            This can include
+            <ol>
+              <li>
+                limitations on what jobs they can take, discrimination in the
+                job market, different pay of the same job, restrictions on what
+                kinds of land and material they can own, selective jailing, and
+                exclusion from public services, such as schools, hospitals,
+                bathrooms, drinking fountains, beaches, or from mixing with
+                others in the country (e.g. laws against inter-ethnic
+                marriages).
+              </li>
+              <li>
+                laws restricting immigration of this group from entering the
+                country.
+              </li>
+              <li>
+                members of the ethnic group voicing concern about discrimination
+                against the ethnic group.
+              </li>
+              <li>
+                Official documents using names for the ethnic group that are not
+                preferred or wanted by members of the ethnic group.
+              </li>
+              <li>This can also include cases of ethnocide</li>
+              <li>
+                Ethnically targeted captivity and incarceration should also be
+                counted.
+              </li>
+              <li>
+                Please also include other unlisted forms of discrimination of
+                you feel they are relevant.
+              </li>
+            </ol>
+            <strong>EXCLUSIONS: </strong>If discrimination occurs within the
+            ethnic group, mark N, but make a note in the comments about the
+            evidence.
+            <p>Do <u>not</u> code this if:</p>
+            <ul>
+              <li>
+                There is only evidence of greater poverty, lower schooling, or
+                lower employment among this group without explicit information
+                about ethnicity-based discrimination.
+              </li>
+              <li>It is simply about being forced to move to new locations.</li>
+              <li>
+                This occurred to the ethnic group in a neighboring country (but
+                please comment if necessary).
+              </li>
+              <li>
+                This occurred only during temporary occupation by an outside
+                country.
+              </li>
+            </ul>
+          </div>
+          <div class="small-space"></div>
+          <select id="discrimination" name="discrimination">
+            <option value="Y">Yes</option>
+            <option value="N" selected>No</option>
+            <!-- <option value="?">?</option> -->
+          </select>
+          <br />
+
+          <label for="discrimination_comment">Comment:</label>
+          <div class="small-space"></div>
+          <div class="description-box">
+            In the comments, please make sure to list the specific details of
+            discrimination.
+          </div>
+          <textarea
+            id="discrimination_comment"
+            name="discrimination_comment"
+            rows="2"
+            cols="50"
+          ></textarea
+          ><br />
+
+          <label for="dataquality_discrimination"
+            >DATAQUALITY-DISCRIMINATION:</label
+          >
+          <div class="small-space"></div>
+          <input
+            type="range"
+            id="dataquality"
+            name="dataquality"
+            min="0"
+            max="3"
+            step="0.5"
+            value="0"
+            oninput="this.nextElementSibling.value = this.value"
+          />
+          <output>0</output>
+          <div class="description-box">
+            <strong>Scale:</strong>
+            <ul>
+              <li>0: No information found</li>
+              <li>
+                0.5: Minimal information only from biased or partial sources
+              </li>
+              <li>
+                1: Limited information found from personal/informal sources
+                (e.g. blogs)
+              </li>
+              <li>
+                2: Limited information found from solid credible sources &
+                peer-reviewed journals
+              </li>
+              <li>
+                3: Ample information found from credible sources & peer-reviewed
+                journals
+              </li>
+            </ul>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Privilege</legend>
+          <!-- Ethnic Recognition -->
+          <h4>Ethnic Recognition</h4>
+          <p class="p-note">
+            In only rare cases are entire ethnic groups deprived of citizenship
+            in a country, but we record this for those rare cases.
+          </p>
+          <label
+            >CITIZEN: Are members of the ethnic group officially recognized as
+            citizens or legimitate residents of the country?</label
+          >
+          <div class="description-box">
+            <em
+              >(e.g. Myanmar does not recognize Rohingya as an official
+              nationality, Roma are not officially recognized in many eastern
+              European countries).</em
+            >
+            <br />
+            <strong
+              >This should be coded as Y, unless there is specific evidence that
+              members of the group are not recognized as citizens.</strong
+            >
+            Simply mention of “secondary citizen” still counts as a Y, because
+            they are still citizens unless additional evidence is provided.
+          </div>
+          <div class="small-space"></div>
+          <select id="citizen" name="citizen">
+            <option value="Y">Yes</option>
+            <option value="N" selected>No</option>
+            <!-- <option value="?">?</option> --></select
+          ><br />
+
+          <label for="citizen_comment">Comment:</label>
+          <div class="small-space"></div>
+          <textarea
+            id="citizen_comment"
+            name="citizen_comment"
+            rows="2"
+            cols="50"
+          ></textarea
+          ><br />
+
+          <!-- Language -->
+          <h4>Language</h4>
+          <p class="p-note">
+            These codes will give information about the status of the ethnic
+            group’s primary language and the privilege experienced by an ethnic
+            group by having the state language as their primary language.
+          </p>
+          <label
+            >STATELANG: Is the language near universally used by members of
+            ethnic group in the home today a state language in this
+            country?</label
+          >
+          <div class="description-box">
+            This only counts for languages that are designated for use in
+            official state affairs and used in official state documents. What
+            counts as a distinct language (e.g., Serbian vs. Croatian) will
+            depend on what are the most salient distinctions in the specific
+            country.
+            <ul>
+              <li>
+                If the ethnic group has shifted to using the state language in
+                recorded history, code Y and leave a comment.
+              </li>
+              <li>
+                If the group doesn’t yet almost universally use this language in
+                the home, then code N.
+              </li>
+            </ul>
+          </div>
+          <div class="small-space"></div>
+          <select id="statelang" name="statelang">
+            <option value="Y">Yes</option>
+            <option value="N" selected>No</option>
+            <!-- <option value="?">?</option> --></select
+          ><br />
+
+          <label for="statelang_comment">Comment:</label>
+          <div class="description-box">
+            In the comment box, please indicate the State language(s) as well as
+            the primary language of the ethnic group.
+          </div>
+          <div class="small-space"></div>
+          <textarea
+            id="statelang_comment"
+            name="statelang_comment"
+            rows="2"
+            cols="50"
+          ></textarea
+          ><br />
+
+          <!-- Religion -->
+          <h4>Religion</h4>
+          <p class="p-note">
+            This provides information about whether the religion of the ethnic
+            group is the privileged religion in a country.
+          </p>
+          <label
+            >RELIGION: Is the currently dominant religion of the ethnic group in
+            this country also the dominant religion in the country?</label
+          >
+          <div class="description-box">
+            The dominant religion means the religion practiced by the most
+            people. What counts as a distinct religion (e.g., Protestant vs.
+            Catholic) will depend on what are the most salient distinctions in
+            the specific country. This should count as Y even if the religion is
+            a mixed religion (see below). If the ethnic group has shifted to
+            primarily this religion in recorded history, code Y and leave a
+            comment.
+          </div>
+          <div class="small-space"></div>
+          <select id="religion" name="religion">
+            <option value="Y">Yes</option>
+            <option value="N" selected>No</option>
+            <!-- <option value="?">?</option> --></select
+          ><br />
+
+          <label for="religion_comment">Comment:</label>
+          <div class="description-box">
+            In the comment box, please indicate the country’s dominant religion
+            as well as the dominant religion of the ethnic group.
+          </div>
+          <div class="small-space"></div>
+          <textarea
+            id="religion_comment"
+            name="religion_comment"
+            rows="2"
+            cols="50"
+          ></textarea
+          ><br />
+
+          <label
+            >RELIG_MIX: Is there a mix of religions within the ethnic
+            group?</label
+          >
+          <div class="description-box">
+            Is the currently dominant religion of the ethnic group in this
+            country a mixture of traditional beliefs/practices and the dominant
+            religion in the country? This means the religion is a mixture of
+            practices and influences and not simply that some people practice
+            one religion and others practice another. Both RELIGION and
+            RELIG_MIX can be Y if applicable.
+          </div>
+          <div class="small-space"></div>
+          <select id="relig_mix" name="relig_mix">
+            <option value="Y">Yes</option>
+            <option value="N" selected>No</option>
+            <!-- <option value="?">?</option> --></select
+          ><br />
+
+          <label for="relig_mix_comment">Comment:</label>
+          <div class="small-space"></div>
+          <textarea
+            id="relig_mix_comment"
+            name="relig_mix_comment"
+            rows="2"
+            cols="50"
+          ></textarea
+          ><br />
+
+          <!-- Secession -->
+          <h4>Secession</h4>
+          <label
+            >SECEDE: Has a substantial section of the ethnic group mounted an
+            organized attempt to secede from the current country to form an
+            independent state?</label
+          >
+          <div class="description-box">
+            This does not need to be successful.
+          </div>
+          <div class="small-space"></div>
+          <select id="secede" name="secede">
+            <option value="Y">Yes</option>
+            <option value="N" selected>No</option>
+            <!-- <option value="?">?</option> --></select
+          ><br />
+
+          <label for="secede_comment">Comment:</label>
+          <div class="small-space"></div>
+          <textarea
+            id="secede_comment"
+            name="secede_comment"
+            rows="2"
+            cols="50"
+          ></textarea
+          ><br />
+
+          <!-- Self-Governance -->
+          <h4>Self-Governance</h4>
+          <label
+            >SELFGOV: Have members of the ethnic group established at least
+            partial independent control over land/politics/community services in
+            their territory that is officially and explicitly recognized by the
+            national government?</label
+          >
+          <div class="description-box">
+            This needs to be current control.
+            <ul>
+              <li>
+                If the region is labelled “autonomous zone” but you have
+                concerns about actual autonomy, still code as Y and make a
+                comment in the comment box.
+              </li>
+              <li>
+                If this is just about education in the local language, code as N
+                and make a comment.
+              </li>
+              <li>
+                If members of the ethnic group have simply tried to gain such
+                self-governance, this code does not count (instead consider
+                SECEDE).
+              </li>
+            </ul>
+          </div>
+          <div class="small-space"></div>
+          <select id="selfgov" name="selfgov">
+            <option value="Y">Yes</option>
+            <option value="N" selected>No</option>
+            <!-- <option value="?">?</option> --></select
+          ><br />
+
+          <label for="selfgov_comment">Comment:</label>
+          <div class="small-space"></div>
+          <textarea
+            id="selfgov_comment"
+            name="selfgov_comment"
+            rows="2"
+            cols="50"
+          ></textarea
+          ><br />
+          <!-- Political Power -->
+          <h4>Political Power</h4>
+          <label
+            >HEADSTATE: Has a member of the ethnic group been a head of state
+            for that country in the last 30 years?</label
+          >
+          <div class="description-box">
+            This can include heads of state that are democratically elected, or
+            who come to power by other means (e.g. military coup). Examples are
+            president, monarch, prime minister. In some cases there may be more
+            than one individual that fits this definition at one point in time
+            (e.g. queen and prime minister).
+            <ul>
+              <li>
+                Include if the leader has recognized ancestry from this group.
+              </li>
+              <li>
+                Only count individuals, not ethnically defined political
+                parties.
+              </li>
+              <li>
+                This should only include heads of state for the entire country,
+                but other kinds of leaders can be added to comments.
+              </li>
+            </ul>
+          </div>
+          <div class="small-space"></div>
+          <select id="headstate" name="headstate">
+            <option value="Y">Yes</option>
+            <option value="N" selected>No</option>
+            <!-- <option value="?">?</option> --></select
+          ><br />
+
+          <label for="headstate_comment">Comment:</label>
+          <div class="description-box">
+            If so, please include name and year of leader in the comment box.
+          </div>
+          <div class="small-space"></div>
+          <textarea
+            id="headstate_comment"
+            name="headstate_comment"
+            rows="2"
+            cols="50"
+          ></textarea
+          ><br />
+          <label for="dataquality_privilege">DATAQUALITY-PRIVILEGE:</label>
+          <div class="small-space"></div>
+          <input
+            type="range"
+            id="dataquality_privilege"
+            name="dataquality_privilege"
+            min="0"
+            max="3"
+            step="0.5"
+            value="0"
+            oninput="this.nextElementSibling.value = this.value"
+          />
+          <output>0</output>
+          <div class="description-box">
+            <strong>Scale:</strong>
+            <ul>
+              <li>0: No information found</li>
+              <li>
+                0.5: Minimal information only from biased or partial sources
+              </li>
+              <li>
+                1: Limited information found from personal/informal sources
+                (e.g. blogs)
+              </li>
+              <li>
+                2: Limited information found from solid credible sources &
+                peer-reviewed journals
+              </li>
+              <li>
+                3: Ample information found from credible sources & peer-reviewed
+                journals
+              </li>
+            </ul>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Colonization</legend>
+          <p class="p-note">
+            <u>Colonization:</u> A foreign ethnic group establishing a
+            government in a new region that exerts social control over the
+            existing population and resources of a region. Although colonization
+            might involve migration of members of the foreign ethnic group to
+            the new region, migration is not sufficient to count as
+            colonization. Territorial invasions during wars (e.g., German
+            takeover of European countries during WW2) as well as administrative
+            dominance (e.g., Soviet control over satellite states in Eastern
+            Europe and Mongolia) count here.
+          </p>
+          <label
+            >COLONIZER: Did this ethnic group forcefully colonize the region in
+            the recorded past (even if it was before the founding of the current
+            country)?</label
+          >
+          <div class="description-box">
+            This also counts if the ethnic group gained a powerful position in
+            society because it was an ally of the colonizer.
+            <em>See definition of colonization above.</em>
+            <ul>
+              <li>
+                If the ethnic group is a mixture of past colonizers and
+                colonized populations, then put Y for both COLONIZED and
+                COLONIZER.
+              </li>
+            </ul>
+          </div>
+          <div class="small-space"></div>
+          <select id="colonizer" name="colonizer">
+            <option value="Y">Yes</option>
+            <option value="N" selected>No</option>
+            <!-- <option value="?">?</option> --></select
+          ><br />
+
+          <label for="colonizer_comment">Comment:</label>
+          <div class="small-space"></div>
+          <textarea
+            id="colonizer_comment"
+            name="colonizer_comment"
+            rows="2"
+            cols="50"
+          ></textarea
+          ><br />
+
+          <label>COLONIZERTIME: If so, when did this occur?</label>
+          <div class="small-space"></div>
+          <input
+            type="text"
+            id="colonizer_time"
+            name="colonizer_time"
+            placeholder="e.g., 1600-1700"
+          /><br />
+
+          <label for="colonizer_time_comment">Comment:</label>
+          <div class="small-space"></div>
+          <textarea
+            id="colonizer_time_comment"
+            name="colonizer_time_comment"
+            rows="2"
+            cols="50"
+          ></textarea
+          ><br />
+
+          <label
+            >COLONIZED: Was this ethnic group forcefully colonized within the
+            region of this country in the recorded past?</label
+          >
+          <div class="description-box">
+            <em>See definition of colonization above.</em>
+          </div>
+          <div class="small-space"></div>
+          <select id="colonized" name="colonized">
+            <option value="Y">Yes</option>
+            <option value="N" selected>No</option>
+            <!-- <option value="?">?</option> -->
+          </select>
+          <br />
+
+          <label for="colonized_comment">Comment:</label>
+          <div class="small-space"></div>
+          <textarea
+            id="colonized_comment"
+            name="colonized_comment"
+            rows="2"
+            cols="50"
+          ></textarea
+          ><br />
+        </fieldset>
+
+        <fieldset>
+          <legend>Ethnicity Characteristics</legend>
+          <div class="description-box">
+            These variables are intended to give some idea of where the ethnic
+            group name came from. It is not directly about privilege or
+            discrimination, but provides useful information about how a society
+            defines ethnic groups.
+            <em>Do not spend too much time on this section.</em>
+          </div>
+          <div class="small-space"></div>
+          <label for="languagedemonym"
+            >LANGUAGEDEMONYM: Is the ethnic designation synonymous with a
+            specific language or dialect spoken commonly be members of the
+            ethnic group (e.g. French, Aymara)?</label
+          >
+          <div class="small-space"></div>
+          <div class="description-box">
+            It is not necessary that members of the ethnic group in the specific
+            country under consideration currently speak the language. For
+            example, Germans in Bolivia may not speak German, but their name is
+            still associated with the German language. <br />
+            <strong>EXCLUSIONS: </strong>ethnic names like “Indian” or
+            “American” are not synonymous with specific languages and so
+            shouldn’t be counted.
+          </div>
+          <select id="languagedemonym" name="languagedemonym">
+            <option value="Y">Yes</option>
+            <option value="N" selected>No</option>
+            <!-- <option value="?">?</option> -->
+          </select>
+          <br />
+
+          <label for="languagedemonym_comment">Comment:</label>
+          <div class="small-space"></div>
+          <textarea
+            id="languagedemonym_comment"
+            name="languagedemonym_comment"
+            rows="2"
+            cols="50"
+          ></textarea
+          ><br />
+
+          <label for="countrydemonym"
+            >COUNTRYDEMONYM: Is the name for the ethnic group synonymous with a
+            recent nation- state (e.g. French, Rwandan, Yugoslavian,
+            Indian)?</label
+          >
+          <div class="small-space"></div>
+          <div class="description-box">
+            <p>
+              This should be a nation-state that was recognized at least once by
+              the U.N. in the last 50 years. It is not necessary that the ethnic
+              group is currently living in the country (e.g. Indians living in
+              South Africa would count here).
+            </p>
+            <strong>EXCLUSIONS: </strong>
+            <ul>
+              <li>
+                This should not include Arabic, which is defined by a common
+                language and culture, but not necessarily by coming from Saudi
+                Arabia.
+              </li>
+              <li>
+                This should not include cases where the ethnicity name
+                specifically refers to speakers of a language (e.g.
+                “English-speaking”, “French-speaking”).
+              </li>
+              <li>
+                This should not be used when the country name appears in a
+                composite (e.g. “Afroboliviano”).
+              </li>
+            </ul>
+          </div>
+          <select id="countrydemonym" name="countrydemonym">
+            <option value="Y">Yes</option>
+            <option value="N" selected>No</option>
+            <!-- <option value="?">?</option> -->
+          </select>
+          <br />
+
+          <label for="countrydemonym_comment">Comment:</label>
+          <div class="small-space"></div>
+          <textarea
+            id="countrydemonym_comment"
+            name="countrydemonym_comment"
+            rows="2"
+            cols="50"
+          ></textarea
+          ><br />
+
+          <label for="autonomouszone_demonym"
+            >AUTONOMOUSZONE_DEMONYM: In the last 100 years, has there been a
+            geographically bounded autonomous zone within or across other
+            countries that bears the name of this ethnic group and is in some
+            sense controlled by members of the ethnic group (e.g. Tibetan,
+            Kurdish)?</label
+          >
+          <div class="small-space"></div>
+          <div class="description-box">
+            If the region is labelled “autonomous zone” but you have concerns
+            about actual autonomy, still code as Y and make a comment in the
+            comment box.<br />
+            <strong>EXCLUSIONS: </strong>This should not be coded if it is
+            already coded for a country demonym.
+          </div>
+          <select id="autonomouszone_demonym" name="autonomouszone_demonym">
+            <option value="Y">Yes</option>
+            <option value="N" selected>No</option>
+            <!-- <option value="?">?</option> -->
+          </select>
+          <br />
+
+          <label for="autonomouszone_demonym_comment">Comment:</label>
+          <div class="small-space"></div>
+          <textarea
+            id="autonomouszone_demonym_comment"
+            name="autonomouszone_demonym_comment"
+            rows="2"
+            cols="50"
+          ></textarea
+          ><br />
+
+          <label for="region_demonym"
+            >REGION_DEMONYM: Is the name for the ethnic group a demonym based on
+            region of the world larger than a nation-state (e.g. European,
+            Afrodescent, South Asian)?
+          </label>
+          <div class="small-space"></div>
+          <div class="description-box">
+            <strong>EXCLUSIONS: </strong>This should not include Arabic, which
+            is defined by a common language and culture, but not necessarily by
+            coming from the Arabian Peninsula. This code should not be coded if
+            it is already coded for a country or autonomous zone demonym.
+          </div>
+          <select id="region_demonym" name="region_demonym">
+            <option value="Y">Yes</option>
+            <option value="N" selected>No</option>
+            <!-- <option value="?">?</option> -->
+          </select>
+          <br />
+
+          <label for="region_demonym_comment">Comment:</label>
+          <div class="small-space"></div>
+          <textarea
+            id="region_demonym_comment"
+            name="region_demonym_comment"
+            rows="2"
+            cols="50"
+          ></textarea
+          ><br />
+
+          <label for="physicalfeature"
+            >PHYSICALFEATURE: Is the name of the ethnic group based on some
+            physical feature common among members of this ethnic group (e.g.
+            Black, White, Colored)?</label
+          >
+          <div class="small-space"></div>
+          <div class="description-box">
+            This can include clothing and tattoos. <br />
+            <strong>EXCLUSIONS: </strong> This should not include names that
+            imply a regional origin (e.g. African-American, Euro-American),
+            unless they also make specific reference to physical features.
+          </div>
+          <select id="physicalfeature" name="physicalfeature">
+            <option value="Y">Yes</option>
+            <option value="N" selected>No</option>
+            <!-- <option value="?">?</option> -->
+          </select>
+          <br />
+
+          <label for="physicalfeature_comment">Comment:</label>
+          <div class="small-space"></div>
+          <textarea
+            id="physicalfeature_comment"
+            name="physicalfeature_comment"
+            rows="2"
+            cols="50"
+          ></textarea
+          ><br />
+
+          <label for="pastnation"
+            >PASTNATION: This ethnicity was the dominant ethnic group or
+            descends from the dominant ethnic group in a historically known
+            nation/empire/kingdom with a centralized government (e.g. Songhai,
+            Malinke)?</label
+          >
+          <div class="small-space"></div>
+          <div class="description-box">
+            The past nation does not need to have been in the current country.
+            The ethnic group’s name should be derived from the nation’s name.
+            This should only be applied to situations where the kingdom, nation,
+            or state associated with this ethnic group is no longer in
+            existence.
+          </div>
+          <select id="pastnation" name="pastnation">
+            <option value="Y">Yes</option>
+            <option value="N" selected>No</option>
+            <!-- <option value="?">?</option> -->
+          </select>
+          <br />
+
+          <label for="pastnation_comment">Comment:</label>
+          <div class="small-space"></div>
+          <textarea
+            id="pastnation_comment"
+            name="pastnation_comment"
+            rows="2"
+            cols="50"
+          ></textarea
+          ><br />
+
+          <label for="mixture"
+            >MIXTURE: Does the name of the ethnicity explicitly imply a mixture
+            of two groups (e.g. Mestizo, Creole, Mulatto)?</label
+          >
+          <div class="small-space"></div>
+          <div class="description-box">
+            If this is coded, also code for REGION when relevant.
+          </div>
+          <select id="mixture" name="mixture">
+            <option value="Y">Yes</option>
+            <option value="N" selected>No</option>
+            <!-- <option value="?">?</option> -->
+          </select>
+          <br />
+
+          <label for="mixture_comment">Comment:</label>
+          <div class="small-space"></div>
+          <textarea
+            id="mixture_comment"
+            name="mixture_comment"
+            rows="2"
+            cols="50"
+          ></textarea
+          ><br />
+
+          <label for="occupation"
+            >OCCUPATION: Is the ethnic group's name defined by an
+            occupation?</label
+          >
+          <div class="small-space"></div>
+          <div class="description-box">
+            This is a common way of defining castes in South Asia. It is not
+            necessary for members of this ethnic group to currently be engaged
+            in this occupation.
+          </div>
+          <select id="occupation" name="occupation">
+            <option value="Y">Yes</option>
+            <option value="N" selected>No</option>
+            <!-- <option value="?">?</option> -->
+          </select>
+          <br />
+
+          <label for="occupation_comment">Comment:</label>
+          <div class="small-space"></div>
+          <textarea
+            id="occupation_comment"
+            name="occupation_comment"
+            rows="2"
+            cols="50"
+          ></textarea
+          ><br />
+
+          <label for="religion_demo"
+            >RELIGION_DEMO: Is the ethnic group’s name synonymous with a
+            religion, denomination or sect?</label
+          >
+          <div class="small-space"></div>
+          <select id="religion_demo" name="religion_demo">
+            <option value="Y">Yes</option>
+            <option value="N" selected>No</option>
+            <!-- <option value="?">?</option> -->
+          </select>
+          <br />
+
+          <label for="religion_demo_comment">Comment:</label>
+          <div class="small-space"></div>
+          <textarea
+            id="religion_demo_comment"
+            name="religion_demo_comment"
+            rows="2"
+            cols="50"
+          ></textarea
+          ><br />
+        </fieldset>
+        <fieldset>
+          <legend>Overall Comments</legend>
+
+          <!-- Textarea for Overall Comments -->
+          <label for="overall_comments">Overall Comments:</label>
+          <textarea
+            id="overall_comments"
+            name="overall_comments"
+            rows="4"
+            cols="50"
+          ></textarea>
+          <br />
+
+          <!-- Slider for Data Quality Overall -->
+          <label for="dataquality_overall">DATAQUALITY-OVERALL:</label>
+          <input
+            type="range"
+            id="dataquality_overall"
+            name="dataquality_overall"
+            min="0"
+            max="3"
+            step="0.5"
+            value="0"
+            oninput="this.nextElementSibling.value = this.value"
+          />
+          <output>0</output>
+          <div class="description-box">
+            <strong>Scale:</strong>
+            <ul>
+              <li>0: No information found</li>
+              <li>
+                0.5: Minimal information only from biased or partial sources
+              </li>
+              <li>
+                1: Limited information found from personal/informal sources
+                (e.g. blogs)
+              </li>
+              <li>
+                2: Limited information found from solid credible sources &
+                peer-reviewed journals
+              </li>
+              <li>
+                3: Ample information found from credible sources & peer-reviewed
+                journals
+              </li>
+            </ul>
+          </div>
+          <br />
+
+          <!-- Textarea for General Comments -->
+          <label for="general_comments">General Comments:</label>
+          <textarea
+            id="general_comments"
+            name="general_comments"
+            rows="4"
+            cols="50"
+          ></textarea>
+        </fieldset>
+        <div style="display:none;">
+          <label for="blank_column_end">NONE</label>
+          <textarea
+            id="blank_column_end"
+            name="blank_column_end"
+            rows="4"
+            cols="50"
+          ></textarea>
+        </div>
+        </fieldset>
+
+        <!-- Submit Button -->
+        <input type="button" value="Submit" onclick="submitForm()" />
+      </form>
+
+      <h2>Generated TSV Output:</h2>
+      <div class="description-box">
+        <strong>Instructions</strong>
+        <ol>
+          <li>Click Submit button above in order to generate tab-separated text.</li>
+          <li>Click Copy to Clipboard button below populated data field.</li>
+          <li><strong>Paste copied data into the FORCEDAWAY column (G)</strong> of the input spreadsheet on the appropriate row.</li>
+          <li><strong>Always</strong> review the pasted data inside the spreadsheet to ensure that fields have been populated correctly!</li>
+        </ol>
+      </div>
+      <textarea id="tsvOutput" rows="10" cols="80" readonly></textarea>
+      <button type="button" onclick="copyToClipboard()">Copy to Clipboard</button>
+
+    </div>
+
+
+    <script>
+      const formData = new FormData(document.getElementById("dataForm"));
+      function submitForm() {
+        const formData = new FormData(document.getElementById("dataForm"));
+        let tsvData = "";
+
+        // Iterate over form data to create TSV string
+        formData.forEach((value, key) => {
+          tsvData += `${value}\t`;
+        });
+
+        // Output the TSV format to the textarea
+        document.getElementById("tsvOutput").value = tsvData;
+      }
+
+      function copyToClipboard() {
+        const tsvOutput = document.getElementById("tsvOutput").value;
+
+        // Copy the TSV output to the clipboard
+        navigator.clipboard.writeText(tsvOutput).then(() => {
+          alert("Copied to clipboard!");
+        }).catch(err => {
+          console.error('Failed to copy text: ', err);
+        });
+      }
+    </script>
+  </body>
+</html>
